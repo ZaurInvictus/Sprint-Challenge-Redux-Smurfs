@@ -20,7 +20,23 @@ export const getSmurfs = () => {
   };
 };
 
+export const POST_START = "POST_START";
+export const POST_SUCCESS = "POST_SUCCESS";
+export const POST_ERROR = "POST_ERROR";
 
+
+export const postSmurf = (newSmurf) => dispatch => {
+  dispatch({ type: POST_START });
+  axios 
+  .post('http://localhost:3333/smurfs', newSmurf)
+  .then( res => {
+    dispatch({ type: POST_SUCCESS, payload: res.data});
+  })
+  .catch(err => {
+    console.log('ERROR from AXIOS POST CALL', err.response.data.Error)
+    dispatch({ type: POST_ERROR, payload: err.response.data.Error});
+  });
+};
 
 /*
   For this project you'll need at least 2 action creators for the main portion,

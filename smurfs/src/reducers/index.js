@@ -2,7 +2,10 @@ import {
   FETCH_START, 
   FETCH_SUCCESS,  
   FETCH_ERROR,
-  
+
+  POST_START,
+  POST_SUCCESS,
+  POST_ERROR,
 } from '../actions'
 
 
@@ -39,6 +42,29 @@ import {
            fetchingSmurfs: false,
            error: action.payload
          }
+
+         case POST_START:
+          return {
+            ...state,
+            addingSmurf: true,
+            error: null,
+          }
+
+        case POST_SUCCESS:
+          return {
+            ...state,
+            addingSmurf: false,
+            error: null,
+            smurfs: action.payload
+          }
+
+          
+        case POST_ERROR:
+          return {
+            ...state,
+            addingSmurf: false,
+            error: action.payload
+          }
 
       default:
        return state
