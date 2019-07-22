@@ -26,7 +26,7 @@ addSmurfHandler = e => {
   render(){
     console.log('ERROR FROM POST SMURF', this.props.error)
     return (
-      <form onSubmit={this.addSmurfHandler}>
+      <form className="SmurfForm" onSubmit={this.addSmurfHandler}>
       
       <input
         name='name'

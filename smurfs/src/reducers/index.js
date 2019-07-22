@@ -6,6 +6,12 @@ import {
   POST_START,
   POST_SUCCESS,
   POST_ERROR,
+
+  DELETE_START,
+  DELETE_SUCCESS,
+
+  EDIT_SMURF_START,
+  EDIT_SMURF_SUCCESS,
 } from '../actions'
 
 
@@ -15,7 +21,7 @@ import {
    error: null,
    addingSmurf: false,
    deletingSmurf: false,
-   //updatingSmurf: false,
+   editingSmurf: false,
  }
 
  export const rootReducer = (state = initialState, action) => {
@@ -65,6 +71,34 @@ import {
             addingSmurf: false,
             error: action.payload
           }
+
+          case DELETE_START:
+            return {
+              ...state,
+              deletingSmurf: true
+            }
+
+          case DELETE_SUCCESS:
+            return {
+              ...state,
+              deletingSmurf: false,
+              error: '',
+              smurfs: action.payload
+            }
+
+              case EDIT_SMURF_START:
+                return {
+                  ...state,
+                  editingSmurf: true
+                }
+
+              case EDIT_SMURF_SUCCESS:
+                return {
+                  ...state,
+                  editingSmurf: false,
+                  error: '',
+                  smurfs: action.payload
+                }
 
       default:
        return state
