@@ -37,4 +37,17 @@
   margin: 6px;
 }
 
+.fa-pencil-alt {
+  color: royalblue;
+}
+
+.fa-times {
+  color: tomato;
+}
+
+.add-smurf-button {
+   color: royalblue;
+   font-weight: bold;
+}
+
 

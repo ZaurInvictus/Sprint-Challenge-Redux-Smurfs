@@ -60,7 +60,7 @@ class EditForm extends React.Component {
             {this.props.editingSmurf ? (
               <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
             ) : (
-              'Edit Smurf'
+              'Save'
             )}
           </button>
         </form>

@@ -49,7 +49,7 @@ addSmurfHandler = e => {
         placeholder='Height'
         onChange={this.handleChange}
       />
-      <button type="submit">
+      <button type="submit" className='add-smurf-button'>
         {this.props.addingSmurf ? 'Loading': 'Add Smurf'}
       </button>
     </form>
