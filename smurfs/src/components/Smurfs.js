@@ -55,7 +55,7 @@ removeSmurf = id => {
                   
                   {this.props.deletingSmurf &&
                   this.state.deletingSmurfId === smurf.id && (
-                    <p>Deleting Smurf 👋</p>
+                    {/* <p>Deleting Smurf 👋</p> */}
                   )}
   
                 <i
